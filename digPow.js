@@ -33,3 +33,16 @@ function digPow(n, p) {
 }
 
 console.log(digPow(89, 1));
+
+function countedOccurrences(arr) {
+  return arr.reduce((acc, val) => {
+    if (val in acc) {
+      acc[val]++;
+    } else {
+      acc[val] = 1;
+    }
+    return acc;
+  }, {});
+}
+
+console.log(countedOccurrences([100, 90, 80, 90, 8]));
