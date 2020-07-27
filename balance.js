@@ -12,25 +12,8 @@
 // balance("!!???!????","??!!?!!!!!!!") === "Balance"
 
 function balance(left, right) {
-  let lCount = 0;
-  let rCount = 0;
-  left = left.split("");
-
-  right = right.split("");
-  left.forEach((el) => {
-    if (el === "!") {
-      lCount += 2;
-    } else if (el === "?") {
-      lCount += 3;
-    }
-  });
-  right.forEach((el) => {
-    if (el === "!") {
-      rCount += 2;
-    } else if (el === "?") {
-      rCount += 3;
-    }
-  });
+  let lCount = left.split("").reduce((s, a) => s + (a === "?" ? 3 : 2), 0);
+  let rCount = right.split("").reduce((s, a) => s + (a === "?" ? 3 : 2), 0);
 
   return rCount === lCount ? "Balance" : lCount > rCount ? "Left" : "Right";
 }
