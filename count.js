@@ -3,12 +3,20 @@
 
 // What if the string is empty? Then the result should be empty object literal, {}.
 
-function count(string) {
-  return string.length
-    ? string.split("").reduce((a, e) => {
-        a[e] = a[e] ? a[e] + 1 : 1;
-        return a;
-      }, {})
-    : {};
+// function count(string) {
+//   return string.length
+//     ? string.split("").reduce((a, e) => {
+//         a[e] = a[e] ? a[e] + 1 : 1;
+//         return a;
+//       }, {})
+//     : {};
+// }
+// console.log(count(""));
+
+function count(str) {
+  let count = {};
+  string.split("").forEach((el) => {
+    return count[el] ? count[el]++ : (count[el] = 1);
+  });
+  return count;
 }
-console.log(count(""));
