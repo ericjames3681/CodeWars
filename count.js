@@ -15,8 +15,9 @@
 
 function count(str) {
   let count = {};
-  string.split("").forEach((el) => {
+  str.split("").forEach((el) => {
     return count[el] ? count[el]++ : (count[el] = 1);
   });
   return count;
 }
+console.log(count("aba"));
