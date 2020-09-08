@@ -7,7 +7,7 @@
 // The numbering starts at 1. The format is n: string. Notice the colon and space in between.
 
 var number = function (array) {
-  return array.map((el, i, arr) => {
+  return array.map((el, i) => {
     return `${i + 1}: ${el}`;
   });
 };
